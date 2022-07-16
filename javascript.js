@@ -16,19 +16,19 @@ let player = playerSelection.toLowerCase();
 
 function playRound() {
   if (playerSelection.toLowerCase() == computerPlay()){
-    return 'Tie!'
+    return 'Tie round!'
   }
   else  if ((player == 'rock' && computerPlay() =='scissors') ||
            (player == 'scissors' && computerPlay() == 'paper') ||
            (player == 'paper' && computerPlay() == 'rock')) {
     playerScore = playerScore+1;
-    return "You won!";
+    return "Round won!"
   }
   else if ((player == 'rock' && computerPlay() == 'paper') ||
            (player == 'paper' && computerPlay() == 'scissors') ||
            (player == 'scissors' && computerPlay() == 'rock')){
     computerScore = computerScore+1;
-    return 'You lost!';
+    return 'Round lost!';
   }
   else {
     return 'Not a choice!'
@@ -38,14 +38,16 @@ function playRound() {
 console.log(playRound());
 console.log(playerScore,computerScore);
 }
+console.log(game());
 
-
-//stopped here
   function game() {
   if (playerScore>computerScore) {
-    return 'You win!'
+    return 'You won!'
   }
   else if (playerScore<computerScore){
-    return 'You loss!'
+    return 'You lost!'
+  }
+  else if (playerScore==computerScore){
+    return 'Tie!'
   }
 }
