@@ -1,32 +1,30 @@
 let playerScore=0;
 let computerScore=0;
+let player = '';
 
-
-for (i=0;i<5;i++) {
-const choices = ['rock','paper','scissors'];
-const random = Math.floor(Math.random() * choices.length);
+const button = document.querySelector('#button');
+button.addEventListener('click', () => {
   
-    function computerPlay(){
-    return (choices[random]);
-    };
 
-let playerSelection= prompt('Pick');
-let player = playerSelection.toLowerCase();
+  const choices = ['rock','paper','scissors'];
+  let computer = choices[Math.floor(Math.random() * 3)];
+  playRound(player,computer)
+  player = 'rock';
+  
+  function playRound(player, computer) {
 
-
-function playRound() {
-  if (playerSelection.toLowerCase() == computerPlay()){
+  if (player == computer){
     return 'Tie round!'
   }
-  else  if ((player == 'rock' && computerPlay() =='scissors') ||
-           (player == 'scissors' && computerPlay() == 'paper') ||
-           (player == 'paper' && computerPlay() == 'rock')) {
+  else  if ((player == 'rock' && computer =='scissors') ||
+           (player == 'scissors' && computer == 'paper') ||
+           (player == 'paper' && computer == 'rock')) {
     playerScore = playerScore+1;
     return "Round won!"
   }
-  else if ((player == 'rock' && computerPlay() == 'paper') ||
-           (player == 'paper' && computerPlay() == 'scissors') ||
-           (player == 'scissors' && computerPlay() == 'rock')){
+  else if ((player == 'rock' && computer == 'paper') ||
+           (player == 'paper' && computer == 'scissors') ||
+           (player == 'scissors' && computer == 'rock')){
     computerScore = computerScore+1;
     return 'Round lost!';
   }
@@ -34,11 +32,9 @@ function playRound() {
     return 'Not a choice!'
   };
 }
-
-console.log(playRound());
+console.log(playRound(player,computer))
 console.log(playerScore,computerScore);
-}
-console.log(game());
+})
 
   function game() {
   if (playerScore>computerScore) {
