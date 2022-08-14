@@ -9,8 +9,8 @@ scissorbtn.addEventListener('click', () => {
   let computer = choices[Math.floor(Math.random() * 3)];
   
   player = 'scissors';
-console.log(playerScore,computerScore);
-console.log(playRound(player,computer))
+  console.log(playRound(player,computer), player, computer)
+  console.log(playerScore,computerScore)
 })
 
 const rockbtn = document.querySelector('#Rockbtn');
@@ -20,8 +20,8 @@ rockbtn.addEventListener('click', () => {
   let computer = choices[Math.floor(Math.random() * 3)];
   
   player = 'rock';
-console.log(playerScore,computerScore);
-console.log(playRound(player,computer))
+  console.log(playRound(player,computer), player, computer)
+  console.log(playerScore,computerScore)
 })
 
 const paperbtn = document.querySelector('#Paperbtn');
@@ -31,6 +31,9 @@ paperbtn.addEventListener('click', () => {
   let computer = choices[Math.floor(Math.random() * 3)];
   
   player = 'paper';
+  
+  console.log(playRound(player,computer), player, computer)
+  console.log(playerScore,computerScore)
 })
 
 function playRound(player, computer) {
@@ -66,5 +69,3 @@ function playRound(player, computer) {
     return 'Tie!'
   }
 }
-console.log(playerScore,computerScore)
-console.log(playRound(player,computer))
