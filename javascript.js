@@ -45,6 +45,7 @@ console.log(playerScore,computerScore);
 function playRound(player, computer) {
 
   if (player == computer){
+    scoreboard.textContent = 'Round tie!';
     return 'Tie round!'
   }
   else  if ((player == 'rock' && computer =='scissors') ||
