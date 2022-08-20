@@ -36,6 +36,12 @@ paperbtn.addEventListener('click', () => {
   console.log(playerScore,computerScore)
 })
 
+const scoreboard = document.querySelector('#Scoreboard');
+const content = document.createElement('div');
+content.classList.add('content');
+scoreboard.appendChild(content)
+console.log(playerScore,computerScore);
+
 function playRound(player, computer) {
 
   if (player == computer){
@@ -45,12 +51,14 @@ function playRound(player, computer) {
            (player == 'scissors' && computer == 'paper') ||
            (player == 'paper' && computer == 'rock')) {
     playerScore += +1;
+    scoreboard.textContent = 'Round won!';
     return "Round won!"
   }
   else if ((player == 'rock' && computer == 'paper') ||
            (player == 'paper' && computer == 'scissors') ||
            (player == 'scissors' && computer == 'rock')){
     computerScore = computerScore+ +1;
+    scoreboard.textContent = 'Round lost!';
     return 'Round lost!';
   }
   else {
@@ -58,6 +66,8 @@ function playRound(player, computer) {
   };
     
 }
+
+
   function game() {
   if (playerScore>computerScore) {
     return 'You won!'
