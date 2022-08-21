@@ -14,12 +14,21 @@ body {
     
 }
 
-.scoreboard {
+#Scoreboard {
+    font-size: x-large;
+    border: 5px solid red;
+    border-radius: 10px;
+    margin: 5px auto;
+    padding: 20px;
+    background-color: rgb(83, 209, 89);
+}
+
+.score, .round {
+    margin: 5px auto;
+    display: flex;
     justify-content: center;
     align-items: center;
-    border: 10px solid red;
-    margin: 30px;
-
+    border-radius: 10px;
 }
 button {
     display:flex;
@@ -29,7 +38,7 @@ button {
     border-radius: 15px;
     background-color: rgb(119, 119, 223);
     font-size: larger;
-    margin: 50px 0px;
+    margin: 20px 0px;
     padding: 5px;
     
 }

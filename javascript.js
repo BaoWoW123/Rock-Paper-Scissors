@@ -36,30 +36,43 @@ paperbtn.addEventListener('click', () => {
   console.log(playerScore,computerScore)
 })
 
+
 const scoreboard = document.querySelector('#Scoreboard');
-const content = document.createElement('div');
-content.classList.add('content');
-scoreboard.appendChild(content)
-console.log(playerScore,computerScore);
+const score = document.createElement('div');
+score.classList.add('score');
+scoreboard.appendChild(score);
+
+const round = document.createElement('div');
+round.classList.add('round');
+scoreboard.appendChild(round);
 
 function playRound(player, computer) {
+  if (playerScore === 5) {
+    alert("You won the game!")
+  }
+  if (computerScore === 5) {
+    alert('You won the game!')
+  }
 
   if (player == computer){
-    scoreboard.textContent = 'Round tie!';
-    return 'Tie round!'
+    round.textContent = 'Round tie!';
+    score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
+    return 'Tie round!';
   }
   else  if ((player == 'rock' && computer =='scissors') ||
            (player == 'scissors' && computer == 'paper') ||
            (player == 'paper' && computer == 'rock')) {
     playerScore += +1;
-    scoreboard.textContent = 'Round won!';
-    return "Round won!"
+    score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
+    round.textContent = 'Round won!';
+    return "Round won!";
   }
   else if ((player == 'rock' && computer == 'paper') ||
            (player == 'paper' && computer == 'scissors') ||
            (player == 'scissors' && computer == 'rock')){
     computerScore = computerScore+ +1;
-    scoreboard.textContent = 'Round lost!';
+    score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
+    round.textContent = 'Round lost!';
     return 'Round lost!';
   }
   else {
