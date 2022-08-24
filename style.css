@@ -10,7 +10,7 @@ body {
     border-radius: 20px;
     background-color: rgb(66, 96, 151);
     padding: 50px;
-    padding-bottom: 41em;
+    padding-bottom: 23em;
     
 }
 
@@ -18,8 +18,8 @@ body {
     font-size: x-large;
     border: 5px solid red;
     border-radius: 10px;
-    margin: 5px auto;
-    padding: 20px;
+    margin: 0px 8em;
+    padding: 30px;
     background-color: rgb(83, 209, 89);
 }
 
@@ -39,6 +39,5 @@ button {
     background-color: rgb(119, 119, 223);
     font-size: larger;
     margin: 20px 0px;
-    padding: 5px;
-    
+    padding: auto;
 }

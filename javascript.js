@@ -47,12 +47,7 @@ round.classList.add('round');
 scoreboard.appendChild(round);
 
 function playRound(player, computer) {
-  if (playerScore === 5) {
-    alert("You won the game!")
-  }
-  if (computerScore === 5) {
-    alert('You won the game!')
-  }
+  
 
   if (player == computer){
     round.textContent = 'Round tie!';
@@ -63,6 +58,9 @@ function playRound(player, computer) {
            (player == 'scissors' && computer == 'paper') ||
            (player == 'paper' && computer == 'rock')) {
     playerScore += +1;
+    if (playerScore === 5 && computerScore < playerScore) {
+    alert("You won the game!")
+  }
     score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
     round.textContent = 'Round won!';
     return "Round won!";
@@ -71,6 +69,9 @@ function playRound(player, computer) {
            (player == 'paper' && computer == 'scissors') ||
            (player == 'scissors' && computer == 'rock')){
     computerScore = computerScore+ +1;
+    if (computerScore === 5 && playerScore < computerScore) {
+    alert('You lost the game!')
+  }
     score.textContent = `Player:${playerScore}  Computer:${computerScore}`;
     round.textContent = 'Round lost!';
     return 'Round lost!';
@@ -78,18 +79,5 @@ function playRound(player, computer) {
   else {
     return 'Not a choice!'
   };
-    
-}
-
-
-  function game() {
-  if (playerScore>computerScore) {
-    return 'You won!'
-  }
-  else if (playerScore<computerScore){
-    return 'You lost!'
-  }
-  else if (playerScore==computerScore){
-    return 'Tie!'
-  }
+  
 }
