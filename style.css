@@ -15,10 +15,11 @@ body {
 }
 
 #Scoreboard {
+    text-align: center;
     font-size: x-large;
-    border: 5px solid red;
+    border: 5px solid white;
     border-radius: 10px;
-    margin: 0px 8em;
+    margin: 0px auto;
     padding: 30px;
     background-color: rgb(83, 209, 89);
 }
@@ -35,9 +36,9 @@ button {
     justify-content: center;
     flex-direction: row;
     border: solid rgb(232, 248, 255) 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: rgb(119, 119, 223);
     font-size: larger;
-    margin: 20px 0px;
+    margin: 20px auto;
     padding: auto;
 }
